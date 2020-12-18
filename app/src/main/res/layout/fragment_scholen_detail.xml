@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="school"
+            type="com.example.basisscholengent.models.School" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/margin_large">
+
+
+        <TextView
+            android:id="@+id/tv_detail_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{school.fields.naam}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Naam basisschool" />
+
+        <TextView
+            android:id="@+id/tv_detail_adres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{school.fields.adres}"
+            android:layout_marginTop="@dimen/margin_large"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detail_name"
+            tools:text="Banaanstraat 19,9000 Gent" />
+
+        <TextView
+            android:id="@+id/tv_detail_nummerinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{school.fields.telefoon}"
+            android:layout_marginTop="@dimen/margin_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detail_adres"
+            tools:text="Tel: 09-221.11.68" />
+
+        <TextView
+            android:id="@+id/tv_detail_emailinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{school.fields.email ?? &quot; Geen email&quot;}"
+            android:layout_marginTop="@dimen/margin_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detail_nummerinfo"
+            tools:text="Email: directie@dewonderboom.be" />
+
+        <TextView
+            android:id="@+id/tv_detail_websiteinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{school.fields.website?? &quot; Geen website&quot;}"
+            android:layout_marginTop="@dimen/margin_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detail_emailinfo"
+            tools:text="Website: www.dewonderboom.be" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
