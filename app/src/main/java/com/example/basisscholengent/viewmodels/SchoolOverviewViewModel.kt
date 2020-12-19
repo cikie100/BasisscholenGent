@@ -1,17 +1,17 @@
 package com.example.basisscholengent.viewmodels
 
-import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.example.basisscholengent.data.remote.GhentApiService
-import com.example.basisscholengent.models.School
-import kotlinx.coroutines.launch
+import com.example.basisscholengent.repos.SchoolRepository
+
 
 //we hebben api service nodig, hebben daardoor ViewModelFactory toegevoegd
-class SchoolOverviewViewModel(private val apiService: GhentApiService) : ViewModel() {
-    private var _scholen = MutableLiveData<List<School>>()
+class SchoolOverviewViewModel( repository: SchoolRepository) : ViewModel() {
+      val scholen = repository.getScholen()
+
+
+
+/*    private var     _scholen = MutableLiveData<List<School>>()
     val scholen: LiveData<List<School>>
         get() = _scholen
 
@@ -34,6 +34,6 @@ class SchoolOverviewViewModel(private val apiService: GhentApiService) : ViewMod
                 Log.e("Error api ", e.message, e)
             }
         }
-    }
+    }*/
 
 }

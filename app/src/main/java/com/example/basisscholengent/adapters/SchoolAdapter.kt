@@ -2,14 +2,15 @@ package com.example.basisscholengent.adapters
 
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.basisscholengent.data.local.SchoolEntity
 import com.example.basisscholengent.databinding.ListItemScholenBinding
-import com.example.basisscholengent.models.School
 
-class SchoolAdapter(private var schoolClickListener: SchoolClickListener) : ListAdapter<School, SchoolViewHolder>(
+class SchoolAdapter(private val schoolClickListener: SchoolClickListener) : ListAdapter<SchoolEntity, SchoolViewHolder>(
         SchoolDiffCallback()
 ) {
     //nieuwe object SchoolViewHolder terug geven
@@ -23,11 +24,11 @@ class SchoolAdapter(private var schoolClickListener: SchoolClickListener) : List
         )
     }
 
-    override fun onBindViewHolder(holder: SchoolViewHolder, position: Int) {
+    override fun onBindViewHolder(view: SchoolViewHolder, position: Int) {
         val school = getItem(position)
-        holder.bindData(school) //haal object op
+        view.bindData(school) //haal object op
         //zet de listener
-        holder.itemView.setOnClickListener {
+        view.itemView.setOnClickListener {
             schoolClickListener.onSchoolClicked(school)
         }
     }
@@ -35,15 +36,15 @@ class SchoolAdapter(private var schoolClickListener: SchoolClickListener) : List
 }
 
 //bij vernieuwing, wijziging -> kijken minimaal aantal updates nodig voor nieuwe lijst
-private class SchoolDiffCallback : DiffUtil.ItemCallback<School>() {
+private class SchoolDiffCallback : DiffUtil.ItemCallback<SchoolEntity>() {
     //kijken of 2 items hetzelfde zijn
     //id vergelijken
-    override fun areItemsTheSame(oldItem: School, newItem: School): Boolean {
+    override fun areItemsTheSame(oldItem: SchoolEntity, newItem: SchoolEntity): Boolean {
         return oldItem.recordid == newItem.recordid
     }
 
     //kijken of inhoud hetzelfde is
-    override fun areContentsTheSame(oldItem: School, newItem: School): Boolean {
+    override fun areContentsTheSame(oldItem: SchoolEntity, newItem: SchoolEntity): Boolean {
         //volledig
         return oldItem == newItem
         //enkel telefoon
@@ -52,16 +53,16 @@ private class SchoolDiffCallback : DiffUtil.ItemCallback<School>() {
 
 }
 
-class SchoolViewHolder(val binding: ListItemScholenBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-    fun bindData(school: School) {
+class SchoolViewHolder(val binding: ListItemScholenBinding) : RecyclerView.ViewHolder(binding.root) {
+    fun bindData(school: SchoolEntity) {
         binding.school = school
     }
 
 }
 
+
 //wordt geimplementeerd in overviewFragment
 interface SchoolClickListener{
-    fun onSchoolClicked(school: School)
+    fun onSchoolClicked(school: SchoolEntity)
 
 }

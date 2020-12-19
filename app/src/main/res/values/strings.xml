@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BasisscholenGent</string>
+    <string name="image_of_school">Image of school</string>
+    <string name="building_image">building image</string>
 </resources>

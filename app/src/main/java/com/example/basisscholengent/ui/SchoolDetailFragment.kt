@@ -8,12 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
-import com.example.basisscholengent.SchoolDetailFragmentArgs
 import com.example.basisscholengent.databinding.FragmentScholenDetailBinding
+import com.example.basisscholengent.repos.RepositoryUtils
 import com.example.basisscholengent.viewmodels.SchoolDetailViewModel
+import com.example.basisscholengent.viewmodels.SchoolDetailViewModelFactory
 
 class SchoolDetailFragment : Fragment() {
-    val arguments: SchoolDetailFragmentArgs by navArgs()
+    private val arguments: SchoolDetailFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,14 +23,20 @@ class SchoolDetailFragment : Fragment() {
     ): View? {
 
         val binding = FragmentScholenDetailBinding.inflate(inflater,container,false)
-        val viewModel = ViewModelProvider(this).get((SchoolDetailViewModel::class.java))
+
+        //factory geef je een repository en die geeft een ViewModelProvider.Factory terug
+        val factory = SchoolDetailViewModelFactory(RepositoryUtils.createScholenRepository((requireContext())))
+//TODO here somewhere
+       // val viewModel = ViewModelProvider(this,factory).get(SchoolDetailViewModel::class.java)
+        val viewModel = ViewModelProvider(this,factory).get(SchoolDetailViewModel::class.java)
 
         //observeren zodat de wijzigingen ook aan ui worden door gegeven
         viewModel.school.observe(viewLifecycleOwner, Observer {
             binding.school =it
         })
         //object doorgeven aan viewmodel
-        viewModel.updateSchool(arguments.school)
+        //viewModel.updateSchool(arguments.school)
+        viewModel.updateSchool(arguments.schoolId)
 
         return  binding.root
     }

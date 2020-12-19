@@ -3,15 +3,17 @@ package com.example.basisscholengent.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.basisscholengent.data.local.SchoolEntity
 import com.example.basisscholengent.models.School
+import com.example.basisscholengent.repos.SchoolRepository
 
 
-class SchoolDetailViewModel : ViewModel() {
-    private var _school = MutableLiveData<School>()
-    val school: LiveData<School>
+class SchoolDetailViewModel(private val repository: SchoolRepository) : ViewModel() {
+    private lateinit var _school :  LiveData<SchoolEntity>
+    val school: LiveData<SchoolEntity>
         get() = _school
 
-    fun updateSchool(school: School){
-        _school.value = school
+    fun updateSchool(id: String){
+        _school = repository.getSchool(id)
     }
 }

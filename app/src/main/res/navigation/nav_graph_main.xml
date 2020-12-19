@@ -18,7 +18,7 @@
         android:name="com.example.basisscholengent.ui.SchoolDetailFragment"
         android:label="SchoolDetailFragment">
         <argument
-            android:name="school"
-            app:argType="com.example.basisscholengent.models.School" />
+            android:name="schoolId"
+            app:argType="string" />
     </fragment>
 </navigation>
