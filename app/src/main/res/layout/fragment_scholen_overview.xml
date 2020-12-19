@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:text="Basisscholen overzicht:"
 
-            android:textSize="24sp"
+            android:textSize="@dimen/mediumSize"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -31,7 +31,7 @@
             android:id="@+id/rv_overview_scholen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/topMarginMedium"
 
             android:scrollbars="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

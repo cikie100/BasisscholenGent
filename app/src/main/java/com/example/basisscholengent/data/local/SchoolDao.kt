@@ -1,13 +1,10 @@
 package com.example.basisscholengent.data.local
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.room.*
-import com.example.basisscholengent.models.School
 
 @Dao
 interface SchoolDao {
-    //3 methodes nodig
 
     //get all scholen
     @Transaction

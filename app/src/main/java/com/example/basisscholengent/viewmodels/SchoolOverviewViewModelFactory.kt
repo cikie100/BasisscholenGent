@@ -2,7 +2,6 @@ package com.example.basisscholengent.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.basisscholengent.data.remote.GhentApiService
 import com.example.basisscholengent.repos.SchoolRepository
 
 //api service wordt doorgegeven

@@ -1,7 +1,7 @@
 package com.example.basisscholengent.data.local
 
 
-import androidx.annotation.Nullable
+
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey

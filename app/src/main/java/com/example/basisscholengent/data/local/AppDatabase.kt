@@ -4,8 +4,6 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.basisscholengent.models.School
-import com.example.basisscholengent.models.SchoolFields
 
 //versie nodig om te weten waarmee bestaande gebruikers werken, 2de versie kan nieuwe tabellen bevatten
 //exportSchema== om db om te zetten naar json file, gebruiken voor testen

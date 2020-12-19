@@ -16,19 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_small"
-
-
-        android:padding="6dp">
-
-<!--        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="38dp"
-            android:layout_height="44dp"
-
-            android:contentDescription="@string/building_image"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@mipmap/ic_launcherb" />-->
+        android:padding="@dimen/PaddingSmall">
 
         <TextView
             android:id="@+id/tv_item_name"
@@ -37,8 +25,8 @@
 
             android:drawablePadding="@dimen/margin_small"
             android:text="@{school.naam}"
-            android:textColor="#0F5B97"
-            android:textSize="16sp"
+            android:textColor="@color/darkblue"
+            android:textSize="@dimen/listItemTextSize"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

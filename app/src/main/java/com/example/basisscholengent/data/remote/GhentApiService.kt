@@ -2,7 +2,6 @@ package com.example.basisscholengent.data.remote
 
 import com.example.basisscholengent.BuildConfig
 import com.example.basisscholengent.models.GetSchoolApiResponse
-import com.example.basisscholengent.utils.Resource
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -12,7 +11,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
-//https://data.stad.gent/explore/dataset/locaties-basisscholen-gent/table/
+//Mijn api is : https://data.stad.gent/explore/dataset/locaties-basisscholen-gent/table/
 private const val BASE_URL = "https://data.stad.gent/"
 
 //nodig om json string object naar kotlin class om te zetten en omgekeerd naar json strings
@@ -48,7 +47,6 @@ interface GhentApiService {
     //   Suspending functions are at the center of everything coroutines.
     //   A suspending function is simply a function that can be paused and resumed at a later time.
     //   They can execute a long running operation and wait for it to complete without blocking.
-   // suspend fun getScholen(): Resource<GetSchoolApiResponse>
 
     suspend fun getScholen(): Response<GetSchoolApiResponse>
 }

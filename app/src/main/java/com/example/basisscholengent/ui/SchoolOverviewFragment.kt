@@ -72,6 +72,7 @@ class SchoolOverviewFragment : Fragment(), SchoolClickListener {
 
     }
 
+    //doorgaan naar volgende scherm (detail)
     override fun onSchoolClicked(school: SchoolEntity) {
         val directions =
                 SchoolOverviewFragmentDirections
