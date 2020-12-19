@@ -19,7 +19,7 @@ class SchoolDetailViewModel(private val repository: SchoolRepository) : ViewMode
 
     fun updateSchool(id: String): LiveData<SchoolEntity>{
         _school = repository.getSchool(id)
-        return repository.getSchool(id)
+        return _school
 
 /*    private lateinit var _school :  LiveData<SchoolEntity>
     val school: LiveData<SchoolEntity>
