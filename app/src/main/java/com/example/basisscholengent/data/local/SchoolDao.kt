@@ -16,7 +16,7 @@ interface SchoolDao {
 
     //get all school by id
     @Transaction
-    @Query("select * from scholen where id=:id")
+    @Query("select * from scholen where recordid=:id")
     fun getSchool(id: String): LiveData<SchoolEntity>
 
     //scholen toevoegen aan db, worden vervangen

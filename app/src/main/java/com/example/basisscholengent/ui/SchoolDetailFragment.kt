@@ -1,5 +1,6 @@
 package com.example.basisscholengent.ui
 
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -26,17 +27,19 @@ class SchoolDetailFragment : Fragment() {
 
         //factory geef je een repository en die geeft een ViewModelProvider.Factory terug
         val factory = SchoolDetailViewModelFactory(RepositoryUtils.createScholenRepository((requireContext())))
-//TODO here somewhere
+
        // val viewModel = ViewModelProvider(this,factory).get(SchoolDetailViewModel::class.java)
         val viewModel = ViewModelProvider(this,factory).get(SchoolDetailViewModel::class.java)
 
-        //observeren zodat de wijzigingen ook aan ui worden door gegeven
-        viewModel.school.observe(viewLifecycleOwner, Observer {
-            binding.school =it
-        })
         //object doorgeven aan viewmodel
         //viewModel.updateSchool(arguments.school)
         viewModel.updateSchool(arguments.schoolId)
+
+        //observeren zodat de wijzigingen ook aan ui worden door gegeven
+        viewModel.school.observe(viewLifecycleOwner, {
+            binding.school = it
+        })
+
 
         return  binding.root
     }

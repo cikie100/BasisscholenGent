@@ -46,13 +46,14 @@ private class SchoolDiffCallback : DiffUtil.ItemCallback<SchoolEntity>() {
     //kijken of inhoud hetzelfde is
     override fun areContentsTheSame(oldItem: SchoolEntity, newItem: SchoolEntity): Boolean {
         //volledig
-        return oldItem == newItem
+        return oldItem.equals(newItem)
         //enkel telefoon
         //return oldItem.fields.telefoon == newItem.fields.telefoon
     }
 
 }
 
+//zet de scholen in overview scherm
 class SchoolViewHolder(val binding: ListItemScholenBinding) : RecyclerView.ViewHolder(binding.root) {
     fun bindData(school: SchoolEntity) {
         binding.school = school
@@ -63,6 +64,6 @@ class SchoolViewHolder(val binding: ListItemScholenBinding) : RecyclerView.ViewH
 
 //wordt geimplementeerd in overviewFragment
 interface SchoolClickListener{
-    fun onSchoolClicked(school: SchoolEntity)
+    fun onSchoolClicked(school: SchoolEntity) //geeft school mee, en later de id
 
 }

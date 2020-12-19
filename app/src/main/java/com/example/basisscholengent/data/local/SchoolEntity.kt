@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "scholen")
 class SchoolEntity (
         @PrimaryKey
-        @ColumnInfo(name = "id")
+        @ColumnInfo(name = "recordid")
         val recordid: String,
         val naam: String,
         val adres: String,

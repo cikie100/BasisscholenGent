@@ -1,5 +1,6 @@
 package com.example.basisscholengent.repos
 
+import androidx.lifecycle.MutableLiveData
 import com.example.basisscholengent.data.local.ScholenLocalDataSource
 import com.example.basisscholengent.data.remote.ScholenRemoteDataSource
 import com.example.basisscholengent.utils.performGetOperation
@@ -12,7 +13,7 @@ class SchoolRepository(
 ) {
 
 
-    fun getSchool(id:String) = scholenLocalDataSource.getSchool(id)
+    fun getSchool(id: String) = scholenLocalDataSource.getSchool(id)
 
     //als we lijst opvragen, eerst api vragen, ...
      fun getScholen() = performGetOperation(

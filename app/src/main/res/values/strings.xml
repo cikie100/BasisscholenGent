@@ -2,4 +2,8 @@
     <string name="app_name">BasisscholenGent</string>
     <string name="image_of_school">Image of school</string>
     <string name="building_image">building image</string>
+    <string name="adres">Adres:</string>
+    <string name="telefoon_nr">Telefoon nr.:</string>
+    <string name="email">Email:</string>
+    <string name="website">Website:</string>
 </resources>
