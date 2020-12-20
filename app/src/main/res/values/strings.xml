@@ -6,4 +6,6 @@
     <string name="telefoon_nr">Telefoon nr.:</string>
     <string name="email">Email:</string>
     <string name="website">Website:</string>
+    <string name="school_kinderen">school kinderen</string>
+    <string name="basisscholen_overzicht">Basisscholen overzicht:</string>
 </resources>

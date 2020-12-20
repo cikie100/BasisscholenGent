@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_small"
+        android:background="#85FFFFFF"
         android:padding="@dimen/PaddingSmall">
 
         <TextView
@@ -28,10 +29,10 @@
             android:textColor="@color/darkblue"
             android:textSize="@dimen/listItemTextSize"
             android:textStyle="bold"
+            app:drawableStartCompat="@mipmap/ic_launcherb"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Naam basisschool"
-            app:drawableStartCompat="@mipmap/ic_launcherb" />
+            tools:text="Naam basisschool" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
