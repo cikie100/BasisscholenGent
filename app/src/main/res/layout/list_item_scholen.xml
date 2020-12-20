@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_small"
-        android:background="#85FFFFFF"
+        android:background="@color/softSalmon"
         android:padding="@dimen/PaddingSmall">
 
         <TextView
@@ -26,7 +26,7 @@
 
             android:drawablePadding="@dimen/margin_small"
             android:text="@{school.naam}"
-            android:textColor="@color/darkblue"
+            android:textColor="@color/darkPurple"
             android:textSize="@dimen/listItemTextSize"
             android:textStyle="bold"
             app:drawableStartCompat="@mipmap/ic_launcherb"
