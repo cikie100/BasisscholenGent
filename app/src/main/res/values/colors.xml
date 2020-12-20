@@ -8,4 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="darkblue">#0F5B97</color>
+    <color name="darkPurple">#3D226E</color>
+    <color name="softSalmon">#ADF4EDE4</color>
 </resources>
